@@ -29,9 +29,6 @@ namespace blazorEcom.Server.Controllers
         {
             var result = await _productService.GetProductAsync(productId);
 
-            if (!result.Success)
-                return BadRequest(result);
-
             return Ok(result);
         }
 	}

@@ -12,12 +12,30 @@ namespace blazorEcom.Server.Services.ProductService
             _dataContext = dataContext;
         }
 
-        public async Task<ServiceResponse<List<Product>>> GetProductAsync()
+        public async Task<ServiceResponse<List<Product>>> GetProductsAsync()
         {
             var response = new ServiceResponse<List<Product>>
             { 
                 Data = await _dataContext.Products.ToListAsync()
             };
+
+            return response;
+        }
+
+        public async Task<ServiceResponse<Product>> GetProductAsync(int productId)
+        {
+            var response = new ServiceResponse<Product>();
+
+            Product? product = await _dataContext.Products.FindAsync(productId);
+            if (product == null)
+            {
+                response.Success = false;
+                response.Message = "Failed to find a product with that id";
+            }
+            else
+            {
+                response.Data = product;
+            }
 
             return response;
         }

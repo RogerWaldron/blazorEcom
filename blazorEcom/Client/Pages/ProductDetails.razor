@@ -7,16 +7,22 @@
 }
 else
 {
-<div class="media">
-    <div class="media-img-wrapper mr-2">
-        <img class="img-fluid" src="@product.ImageUrl" alt="@product.Title" />
-    </div>
-    <div class="media-body">
-        <h2 class="mb-0">@product.Title</h2>
-        <p>@product.Description</p>
-        <h4 class="price">
-            $@product.Price
-        </h4>
+<div class="container">
+    <div class="row g-3">
+        <div class="col-md-6">
+            <div class="">
+                <img class="img-fluid" src="@product.ImageUrl" alt="@product.Title" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="">
+                <h2 class="">@product.Title</h2>
+                <p>@product.Description</p>
+                <h4 class="price">
+                    $@product.Price
+                </h4>
+            </div>
+        </div>
     </div>
 </div>
 }

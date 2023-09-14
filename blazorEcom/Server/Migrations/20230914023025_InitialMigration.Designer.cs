@@ -11,7 +11,7 @@ using blazorEcom.Server.Data;
 namespace blazorEcom.Server.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230914020552_InitialMigration")]
+    [Migration("20230914023025_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -41,7 +41,7 @@ namespace blazorEcom.Server.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Title")
                         .IsRequired()

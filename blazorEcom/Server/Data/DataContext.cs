@@ -11,6 +11,27 @@ namespace blazorEcom.Server.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Category>().HasData(
+                new Category
+                {
+                    Id = 1,
+                    Name = "Books",
+                    Url = "books"
+                },
+                new Category
+                {
+                    Id = 2,
+                    Name = "Movies",
+                    Url = "movies"
+                },
+                new Category
+                {
+                    Id = 3,
+                    Name = "Video Games",
+                    Url = "video-games"
+                }
+            );
+
             modelBuilder.Entity<Product>().HasData(
                 new Product
                 {
@@ -18,7 +39,8 @@ namespace blazorEcom.Server.Data
                     Title = "Event-Driven Architecture uses topics not queues",
                     Description = "Event streams are more complex. They’re typically time-ordered, interrelated, and must be processed as a group.",
                     ImageUrl = "https://images.pexels.com/photos/9883024/pexels-photo-9883024.jpeg?auto=compress&cs=tinysrgb&w=336&h200=&dpr=2",
-                    Price = 4.99m
+                    Price = 4.99m,
+                    CategoryId = 1
                 },
                 new Product
                 {
@@ -26,7 +48,8 @@ namespace blazorEcom.Server.Data
                     Title = "Azure Service Bus, a brokered messaging model",
                     Description = "Messages are reliably stored in a broker (the queue) until received by the consumer. The queue guarantees First-In/First-Out (FIFO) message delivery, respecting the order in which messages were added to the queue.",
                     ImageUrl = "https://images.pexels.com/photos/17503523/pexels-photo-17503523/free-photo-of-cart-with-restaurant-menu-wine-bottles.jpeg?auto=compress&cs=tinysrgb&w=336&h=200&dpr=2",
-                    Price = 9.99m
+                    Price = 9.99m,
+                    CategoryId = 1
                 },
                 new Product
                 {
@@ -34,12 +57,22 @@ namespace blazorEcom.Server.Data
                     Title = "Automated ML (AutoML)",
                     Description = "A cutting edge technology that automates the process of building best performing models for your Machine Learning scenario. All you have to do is load your data, and AutoML takes care of the rest of the model building process.",
                     ImageUrl = "https://images.pexels.com/photos/15447298/pexels-photo-15447298/free-photo-of-retro-cassette-records-in-stacks.jpeg?auto=compress&cs=tinysrgb&w=336&h=200&dpr=2",
-                    Price = 19.99m
+                    Price = 19.99m,
+                    CategoryId = 1
+                },
+                new Product
+                {
+                    Id = 4,
+                    CategoryId = 2,
+                    Title = "The Matrix",
+                    Description = "The Matrix is a 1999 science fiction action film written and directed by the Wachowskis, and produced by Joel Silver. Starring Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving, and Joe Pantoliano, and as the first installment in the Matrix franchise, it depicts a dystopian future in which humanity is unknowingly trapped inside a simulated reality, the Matrix, which intelligent machines have created to distract humans while using their bodies as an energy source. When computer programmer Thomas Anderson, under the hacker alias \"Neo\", uncovers the truth, he \"is drawn into a rebellion against the machines\" along with other people who have been freed from the Matrix.",
+                    ImageUrl = "https://upload.wikimedia.org/wikipedia/en/c/c1/The_Matrix_Poster.jpg",
                 }
             );
         }
 
         public DbSet<Product> Products { get; set; }
-	}
+        public DbSet<Category> Categories { get; set; }
+    }
 }
 

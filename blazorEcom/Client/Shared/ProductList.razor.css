@@ -1,40 +1,7 @@
 ﻿body {
 }
 
-media {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    max-width: 40rem;
-}
-
-media-body {
-    flex: 1;
-}
-
-
-media-img:hover {
-    transform: scale(1.2);
-}
-
-media-img-wrapper {
-    width: 200px;
-    text-align: center;
-}
-
 price {
     font-size: 2rem;
     color: azure;
-}
-
-@media (min-width: 1024px) {
-    .media {
-        flex-direction: row;
-        max-width: 60rem;
-    }
-
-    media-img-wrapper {
-        width: 100%;
-        height: auto;
-    }
 }

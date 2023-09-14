@@ -1,12 +1,11 @@
 ﻿body {
 }
 
-body {
-}
-
 media {
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
+    max-width: 40rem;
 }
 
 media-body {
@@ -24,9 +23,11 @@ price {
     color: azure;
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
     .media {
-        flex-direction: column;
+        flex-direction: row;
+        max-width: 60rem;
+        margin: auto 0;
     }
 
     media-img-wrapper {

@@ -63,10 +63,38 @@ namespace blazorEcom.Server.Data
                 new Product
                 {
                     Id = 4,
-                    CategoryId = 2,
                     Title = "The Matrix",
                     Description = "The Matrix is a 1999 science fiction action film written and directed by the Wachowskis, and produced by Joel Silver. Starring Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving, and Joe Pantoliano, and as the first installment in the Matrix franchise, it depicts a dystopian future in which humanity is unknowingly trapped inside a simulated reality, the Matrix, which intelligent machines have created to distract humans while using their bodies as an energy source. When computer programmer Thomas Anderson, under the hacker alias \"Neo\", uncovers the truth, he \"is drawn into a rebellion against the machines\" along with other people who have been freed from the Matrix.",
                     ImageUrl = "https://upload.wikimedia.org/wikipedia/en/c/c1/The_Matrix_Poster.jpg",
+                    Price = 19.99m,
+                    CategoryId = 2
+                },
+                new Product
+                {
+                    Id = 5,
+                    Title = "The Matrix Reloaded",
+                    Description = "The Matrix is a 2003 science fiction action film written and directed by the Wachowskis, and produced by Joel Silver. Starring Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving, and as the second installment in the Matrix franchise, Six months after the events of The Matrix, Neo and Trinity are now romantically involved. Morpheus receives a message from Captain Niobe of the Logos calling an emergency meeting of all ships of Zion. An army of Sentinels is tunneling towards Zion and will reach it within 72 hours. Commander Lock orders all ships to return to Zion to prepare, but Morpheus asks one ship to remain to contact the Oracle. Within the Matrix, the lone ship's crew is encountered by the former Agent Smith, who copies himself over the body of crew member Bane and uses the phone line to leave the Matrix.",
+                    ImageUrl = "https://upload.wikimedia.org/wikipedia/en/b/ba/Poster_-_The_Matrix_Reloaded.jpg",
+                    Price = 19.99m,
+                    CategoryId = 2
+                },
+                new Product
+                {
+                    Id = 6,
+                    Title = "The Matrix Revolutions",
+                    Description = "The Matrix is a 2003 science fiction action film written and directed by the Wachowskis, and produced by Joel Silver. Starring Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving, and as the third installment in the Matrix franchise, Picking up immediately where Reloaded ended, Neo and Bane still lie unconscious in the medical bay of the ship Hammer. Inside the Matrix, Neo is trapped in a subway station named Mobil Ave, a transition zone between the Matrix and the machine world. He meets a \"family\" of programs, including a girl named Sati.",
+                    ImageUrl = "https://upload.wikimedia.org/wikipedia/en/3/34/Matrix_revolutions_ver7.jpg",
+                    Price = 19.99m,
+                    CategoryId = 2
+                },
+                new Product
+                {
+                    Id = 7,
+                    Title = "The Matrix Resurrections",
+                    Description = "The Matrix is a 2021 science fiction action film written and directed by the Lana Wachowski, and produced by Lana Wachowski. Starring Keanu Reeves, Carrie-Anne Moss, and is the final installment in the Matrix franchise.",
+                    ImageUrl = "https://upload.wikimedia.org/wikipedia/en/5/50/The_Matrix_Resurrections.jpg",
+                    Price = 19.99m,
+                    CategoryId = 2
                 }
             );
         }

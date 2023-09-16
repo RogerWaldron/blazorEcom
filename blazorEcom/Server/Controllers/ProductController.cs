@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 namespace blazorEcom.Server.Controllers
 {
     [Route("api/[controller]")]
-	[ApiController]
-	public class ProductController : ControllerBase
-	{
+    [ApiController]
+    public class ProductController : ControllerBase
+    {
 
         private readonly IProductService _productService;
 
@@ -14,7 +14,7 @@ namespace blazorEcom.Server.Controllers
         {
             _productService = productService;
         }
- 
+
 
         [HttpGet]
         public async Task<ActionResult<ServiceResponse<List<Product>>>> GetProducts()
@@ -30,6 +30,14 @@ namespace blazorEcom.Server.Controllers
             var result = await _productService.GetProductAsync(productId);
 
             return Ok(result);
+        }
+
+        [HttpGet("category/{categoryUrl}")]
+        public async Task<ActionResult<ServiceResponse<List<Product>>>> GetProductsByCategoryAsync(string categoryUrl)
+        {
+            var result = await _productService.GetProductsByCategoryAsync(categoryUrl);
+
+            return Ok(result);    
         }
 	}
 }

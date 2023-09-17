@@ -1,4 +1,4 @@
-﻿using blazorEcom.Server.Services.ProductService;
+using blazorEcom.Server.Services.ProductService;
 using Microsoft.AspNetCore.Mvc;
 
 namespace blazorEcom.Server.Controllers
@@ -14,7 +14,6 @@ namespace blazorEcom.Server.Controllers
         {
             _productService = productService;
         }
-
 
         [HttpGet]
         public async Task<ActionResult<ServiceResponse<List<Product>>>> GetProducts()

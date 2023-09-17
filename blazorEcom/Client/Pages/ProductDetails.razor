@@ -1,4 +1,4 @@
-﻿@page "/product/{id:int}"
+@page "/product/{id:int}"
 @inject IProductService ProductService 
 
 @if(product == null)
@@ -87,6 +87,7 @@ else
         var variant = product?.Variants.FirstOrDefault(p => p.ProductTypeId == currentVariant);
 
         return variant!;
+
     }
 
 }

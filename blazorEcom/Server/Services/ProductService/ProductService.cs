@@ -1,4 +1,4 @@
-﻿using blazorEcom.Server.Data;
+using blazorEcom.Server.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace blazorEcom.Server.Services.ProductService

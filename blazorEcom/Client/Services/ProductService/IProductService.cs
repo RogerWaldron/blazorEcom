@@ -1,4 +1,4 @@
-﻿using blazorEcom.Shared;
+using blazorEcom.Shared;
 
 namespace blazorEcom.Client.Services.ProductService
 {

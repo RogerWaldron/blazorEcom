@@ -1,4 +1,4 @@
-﻿using System.Net.Http.Json;
+using System.Net.Http.Json;
 using blazorEcom.Shared;
 
 namespace blazorEcom.Client.Services.ProductService
@@ -6,7 +6,7 @@ namespace blazorEcom.Client.Services.ProductService
     public class ProductService : IProductService
 	{
         private readonly HttpClient _httpClient;
-
+        
         public ProductService(HttpClient httpClient)
 		{
             _httpClient = httpClient;

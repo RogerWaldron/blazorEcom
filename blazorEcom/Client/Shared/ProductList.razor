@@ -25,7 +25,7 @@ else
                         </a>
                         <p class="card-text">@product.Description</p>
                         <h5 class="price">
-                            $@product.Price
+                            @GetPriceText(product)
                         </h5>
                     </div>
                 </li>
@@ -46,6 +46,29 @@ else
     public void Dispose()
     {
         ProductService.ProductsChanged -= StateHasChanged;
+    }
+
+    private string GetPriceText(Product product)
+    {
+        var variants = product.Variants;
+        var message = string.Empty;
+
+        switch(variants.Count())
+        {
+            case 0:
+                message = $"TBA";
+                break;
+            case 1:
+                message = $"${variants[0].Price}";
+                break;
+            default:
+                decimal minPrice = variants.Min(v => v.Price);
+                message = $"Starting from ${minPrice}";
+                break;
+
+        }
+
+        return message;
     }
 }
 

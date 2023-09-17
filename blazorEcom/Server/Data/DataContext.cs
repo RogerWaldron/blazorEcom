@@ -85,8 +85,8 @@ namespace blazorEcom.Server.Data
                     },
                     new ProductVariant
                     {
-                        OriginalPrice = 19.99m,
-                        Price = 9.19m,
+                        OriginalPrice = 29.99m,
+                        Price = 19.99m,
                         ProductId = 4,
                         ProductTypeId = 6
                     },
@@ -99,8 +99,8 @@ namespace blazorEcom.Server.Data
                     },
                     new ProductVariant
                     {
-                        OriginalPrice = 19.99m,
-                        Price = 9.19m,
+                        OriginalPrice = 29.99m,
+                        Price = 19.99m,
                         ProductId = 5,
                         ProductTypeId = 6
                     },
@@ -113,8 +113,8 @@ namespace blazorEcom.Server.Data
                     },
                     new ProductVariant
                     {
-                        OriginalPrice = 19.99m,
-                        Price = 9.19m,
+                        OriginalPrice = 29.99m,
+                        Price = 19.99m,
                         ProductId = 6,
                         ProductTypeId = 6
                     },
@@ -127,8 +127,8 @@ namespace blazorEcom.Server.Data
                     },
                     new ProductVariant
                     {
-                        OriginalPrice = 19.99m,
-                        Price = 19.19m,
+                        OriginalPrice = 29.99m,
+                        Price = 19.99m,
                         ProductId = 7,
                         ProductTypeId = 6
                     }

@@ -1,6 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
 namespace blazorEcom.Shared
+
 {
     public class Product
 	{
@@ -13,8 +12,11 @@ namespace blazorEcom.Shared
 
 		public string ImageUrl { get; set; } = string.Empty;
 
-        [Column(TypeName = "decimal(18,2)")]
-		public decimal Price { get; set; }
+		public List<ProductVariant> Variants { get; set; } = new List<ProductVariant>();
+
+		public Category? Category { get; set; }
+
+		public int CategoryId { get; set; }
 	}
 }
 

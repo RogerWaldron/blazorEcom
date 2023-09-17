@@ -1,22 +1,55 @@
-﻿@page "/product/{id:int}"
+@page "/product/{id:int}"
 @inject IProductService ProductService 
 
 @if(product == null)
 {
-        <span>Loading product...</span>
+        <span>@message</span>
 }
 else
 {
-<div class="media">
-    <div class="media-img-wrapper mr-2">
-        <img class="img-fluid" src="@product.ImageUrl" alt="@product.Title" />
-    </div>
-    <div class="media-body">
-        <h2 class="mb-0">@product.Title</h2>
-        <p>@product.Description</p>
-        <h4 class="price">
-            $@product.Price
-        </h4>
+<div class="container">
+    <div class="row g-3">
+        <div class="col-md-6">
+            <div class="">
+                <img class="img-fluid" src="@product.ImageUrl" alt="@product.Title" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="">
+                <h2 class="">@product.Title</h2>
+                <p>@product.Description</p>
+                @if (product.Variants != null && product.Variants.Count > 1)
+                {
+                    <div class="mb-4">
+                        <select class="form-select" @bind="currentVariant">
+                            @foreach (var variant in product.Variants)
+                            {
+                                <option value="@variant.ProductTypeId">@variant.ProductType.Name</option>
+                            }
+                        </select>
+                    </div>
+                }
+                @if (@GetSelectedVariant() != null)
+                {
+                    @if (GetSelectedVariant().OriginalPrice > GetSelectedVariant().Price)
+                    {
+                        <h4 class="text-muted" style="text-decoration: line-through;">
+                            Was $ @GetSelectedVariant().OriginalPrice
+                        </h4>
+
+                        <h4 class="price">
+                            Now $ @GetSelectedVariant().Price
+                        </h4>
+                    }
+                    else
+                    {
+                        <h4 class="price">
+                           $ @GetSelectedVariant().Price
+                        </h4>
+                    }
+                }
+            </div>
+        </div>
     </div>
 </div>
 }
@@ -24,13 +57,37 @@ else
 
 @code {
     private Product? product = null;
+    private string message = string.Empty;
+    private int currentVariant = 1;
 
     [Parameter]
-    public int id { get; set; }
+    public int Id { get; set; }
 
     protected override async Task OnParametersSetAsync()
     {
-        product = ProductService.Products.Find(p => p.Id == id);
+        message = "Loading product...";
+        var result = await ProductService.GetProduct(Id);
+
+        if (!result.Success)
+        {
+            message = result.Message;
+        }
+        else
+        {
+            product = result.Data;
+            if (product?.Variants.Count() > 0)
+            {
+                currentVariant = product.Variants[0].ProductTypeId;
+            }
+        }
+    }
+
+    private ProductVariant GetSelectedVariant()
+    {
+        var variant = product?.Variants.FirstOrDefault(p => p.ProductTypeId == currentVariant);
+
+        return variant!;
+
     }
 
 }

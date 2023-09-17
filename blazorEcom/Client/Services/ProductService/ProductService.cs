@@ -12,7 +12,7 @@ namespace blazorEcom.Client.Services.ProductService
             _httpClient = httpClient;
         }
 
-        public event Action ProductsChanged;
+        public event Action? ProductsChanged;
 
         public List<Product> Products { get; set; } = new List<Product>();
 
@@ -25,7 +25,7 @@ namespace blazorEcom.Client.Services.ProductService
             if(results != null && results.Data != null)
                 Products = results.Data;
 
-            ProductsChanged.Invoke();
+            ProductsChanged?.Invoke();
         }
 
         public async Task<ServiceResponse<Product>> GetProduct(int productId)

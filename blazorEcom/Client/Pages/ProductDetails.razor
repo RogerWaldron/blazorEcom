@@ -75,7 +75,7 @@ else
         else
         {
             product = result.Data;
-            if (product.Variants.Count() > 0)
+            if (product?.Variants.Count() > 0)
             {
                 currentVariant = product.Variants[0].ProductTypeId;
             }
@@ -84,9 +84,9 @@ else
 
     private ProductVariant GetSelectedVariant()
     {
-        var variant = product.Variants.FirstOrDefault(p => p.ProductTypeId == currentVariant);
+        var variant = product?.Variants.FirstOrDefault(p => p.ProductTypeId == currentVariant);
 
-        return variant;
+        return variant!;
     }
 
 }

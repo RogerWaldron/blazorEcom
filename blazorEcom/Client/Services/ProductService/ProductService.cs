@@ -32,7 +32,7 @@ namespace blazorEcom.Client.Services.ProductService
         {
             var result = await _httpClient.GetFromJsonAsync<ServiceResponse<Product>>($"api/product/{productId}");
 
-            return result;
+            return result!;
         }
     }
 }

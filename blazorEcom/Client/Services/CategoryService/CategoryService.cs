@@ -27,7 +27,7 @@ namespace blazorEcom.Client.Services.CategoryService
         {
             var result = await _httpClient.GetFromJsonAsync<ServiceResponse<Category>>($"api/category/{categoryId}");
 
-            return result;
+            return result!;
         }
     }
 }
